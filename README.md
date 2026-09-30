@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# git_testing
-=======
 # Your Year with ChatGPT – Archetype Card
 
 A premium, glassmorphic React card component built with Tailwind CSS, following forensic design specifications.
@@ -47,4 +44,4 @@ This card intentionally uses:
 - Grain texture (print-like quality)
 
 Premium but friendly. Technical but soft.
->>>>>>> 8ecfaf1 (first commit)
+# git_testing
