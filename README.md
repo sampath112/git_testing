@@ -45,3 +45,7 @@ This card intentionally uses:
 
 Premium but friendly. Technical but soft.
 # git_testing
+
+
+
+made changes directly in github to test whether this will showin local computer . 
