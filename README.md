@@ -49,3 +49,6 @@ Premium but friendly. Technical but soft.
 
 
 made changes directly in github to test whether this will showin local computer . 
+
+// git pull works , if any changes in remote , like i changed directly in github and not in m local branch  suign pull fetched that change in my local ,
+
