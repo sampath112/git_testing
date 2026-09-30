@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: 'kern' 1, 'liga' 1;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  font-variant-ligatures: common-ligatures;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.depth-bg {
+  transform: translateZ(0px);
+}
+
+.depth-mid {
+  transform: translateZ(30px);
+}
+
+.depth-front {
+  transform: translateZ(60px);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(300%) rotate(45deg);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.glitter-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  animation: breathe 6s ease-in-out infinite, twinkle 4s ease-in-out infinite;
+}
+
+.glitter-icon svg {
+  filter: drop-shadow(0 0 4px rgba(100, 200, 255, 0.4)) 
+          drop-shadow(0 0 8px rgba(150, 100, 255, 0.3));
+}
+
+.glitter-icon .shimmer-overlay {
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(
+    120deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.9) 50%,
+    transparent 75%
+  );
+  animation: shimmer 3.5s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.8;
+  mix-blend-mode: overlay;
+  border-radius: 50%;
+}
+
+/* Premium SVG rendering */
+svg {
+  shape-rendering: geometricPrecision;
+}
+
+/* High-quality text rendering */
+h1, h2, h3, h4, h5, h6, p, span {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@media (hover: none) {
+  .card-mobile {
+    animation: float 6s ease-in-out infinite;
+  }
+}
